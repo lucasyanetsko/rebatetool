@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White-Label Customization Demo - Rebate Locator</title>
+    <!-- Load Widget CSS -->
+    <link rel="stylesheet" href="/widget.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #f9fafb;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 12px;
+        }
+        
+        .header p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Alert Banner */
+        .alert {
+            background: #ecfdf5;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+        }
+        
+        .alert-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .alert-content {
+            flex: 1;
+        }
+        
+        .alert-title {
+            font-weight: 600;
+            color: #065f46;
+            margin-bottom: 4px;
+        }
+        
+        .alert-text {
+            color: #047857;
+            font-size: 0.875rem;
+        }
+        
+        /* Demo Grid */
+        .demo-grid {
+            display: grid;
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        /* Demo Card */
+        .demo-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+            padding: 24px;
+        }
+        
+        .demo-card-header {
+            margin-bottom: 24px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        
+        .demo-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+        
+        .demo-description {
+            color: #6b7280;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Code Section */
+        .code-section {
+            margin-bottom: 24px;
+        }
+        
+        .code-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+        
+        .code-block {
+            background: #1f2937;
+            color: #e5e7eb;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.5;
+        }
+        
+        /* Preview Section */
+        .preview-section {
+            margin-top: 24px;
+        }
+        
+        .preview-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+        
+        .preview-container {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 24px;
+            border: 2px dashed #d1d5db;
+        }
+        
+        .widget-wrapper {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 16px;
+            }
+            
+            .header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .demo-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>White-Label Customization Examples</h1>
+            <p>See how the rebate locator widget adapts to match different brand styles and design systems</p>
+        </div>
+        
+        <!-- Alert Banner -->
+        <div class="alert">
+            <span class="alert-icon">✨</span>
+            <div class="alert-content">
+                <div class="alert-title">Fully Customizable White-Label Widget</div>
+                <div class="alert-text">
+                    All examples below use the same widget with different configuration options. Change colors, button styles, and more with simple parameters.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Demo Grid -->
+        <div class="demo-grid">
+            <!-- Example 1: Corporate Blue -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge">Corporate</span>
+                    <h2 class="demo-title">🏢 Professional Corporate Style</h2>
+                    <p class="demo-description">
+                        Clean, professional design with traditional blue color scheme. Perfect for enterprise websites and B2B platforms.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-corporate',
+  primaryColor: '#2563eb',
+  buttonStyle: 'default',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-corporate" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 2: Modern Tech -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge">Modern</span>
+                    <h2 class="demo-title">🚀 Modern Tech Startup</h2>
+                    <p class="demo-description">
+                        Contemporary design with rounded buttons and purple accent. Ideal for tech startups and SaaS platforms.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-modern',
+  primaryColor: '#8b5cf6',
+  buttonStyle: 'rounded',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-modern" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 3: Bold Brand -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge">Bold</span>
+                    <h2 class="demo-title">⚡ Bold & Energetic Brand</h2>
+                    <p class="demo-description">
+                        Vibrant design with high contrast and bold colors. Great for consumer brands and retail sites.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-bold',
+  primaryColor: '#dc2626',
+  buttonStyle: 'square',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-bold" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 4: Minimal -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge">Minimal</span>
+                    <h2 class="demo-title">✨ Minimal & Clean Design</h2>
+                    <p class="demo-description">
+                        Understated design with minimal styling and clean lines. Perfect for design-focused brands and agencies.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-minimal',
+  primaryColor: '#1f2937',
+  buttonStyle: 'minimal',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-minimal" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 5: Eco-Friendly -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge">Eco-Friendly</span>
+                    <h2 class="demo-title">🌱 Green & Sustainable</h2>
+                    <p class="demo-description">
+                        Earth-toned design with green accents. Ideal for environmental organizations and sustainable brands.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-eco',
+  primaryColor: '#059669',
+  category: 'HVAC',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-eco" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 6: LG Brand -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge" style="background: #a50034;">LG Electronics</span>
+                    <h2 class="demo-title">🎯 LG Brand Colors</h2>
+                    <p class="demo-description">
+                        Matches LG Electronics' brand identity with official LG Red and the actual LG EI fonts.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-lg',
+  primaryColor: '#a50034',  // LG Red
+  category: 'Kitchen Appliances',
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-lg" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example 7: Custom CSS -->
+            <div class="demo-card">
+                <div class="demo-card-header">
+                    <span class="badge" style="background: #f59e0b;">Advanced</span>
+                    <h2 class="demo-title">🎨 Custom CSS Styling</h2>
+                    <p class="demo-description">
+                        Complete customization with custom CSS for maximum white-label flexibility. Shows how brands can apply their exact design system.
+                    </p>
+                </div>
+                
+                <div class="code-section">
+                    <div class="code-label">Integration Code:</div>
+                    <div class="code-block">RebateLocator.init({
+  container: '#widget-custom',
+  primaryColor: '#f59e0b',
+  buttonStyle: 'rounded',
+  customCSS: `
+    .rebate-widget-root button {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+  `,
+  mode: 'embedded'
+});</div>
+                </div>
+                
+                <div class="preview-section">
+                    <div class="preview-label">Live Preview:</div>
+                    <div class="preview-container">
+                        <div id="widget-custom" class="widget-wrapper"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load the widget -->
+    <script src="/widget.iife.js"></script>
+    
+    <!-- Initialize all widgets -->
+    <script>
+        if (window.RebateLocator) {
+            // Corporate style
+            RebateLocator.init({
+                container: '#widget-corporate',
+                primaryColor: '#2563eb',
+                buttonStyle: 'default',
+                mode: 'embedded'
+            });
+
+            // Modern tech
+            RebateLocator.init({
+                container: '#widget-modern',
+                primaryColor: '#8b5cf6',
+                buttonStyle: 'rounded',
+                mode: 'embedded'
+            });
+
+            // Bold/energetic
+            RebateLocator.init({
+                container: '#widget-bold',
+                primaryColor: '#dc2626',
+                buttonStyle: 'square',
+                mode: 'embedded'
+            });
+
+            // Minimal
+            RebateLocator.init({
+                container: '#widget-minimal',
+                primaryColor: '#1f2937',
+                buttonStyle: 'minimal',
+                mode: 'embedded'
+            });
+
+            // Eco-friendly
+            RebateLocator.init({
+                container: '#widget-eco',
+                primaryColor: '#059669',
+                category: 'HVAC',
+                mode: 'embedded'
+            });
+
+            // LG Brand
+            RebateLocator.init({
+                container: '#widget-lg',
+                primaryColor: '#a50034',
+                category: 'Kitchen Appliances',
+                mode: 'embedded'
+            });
+
+            // Custom styling
+            RebateLocator.init({
+                container: '#widget-custom',
+                primaryColor: '#f59e0b',
+                buttonStyle: 'rounded',
+                mode: 'embedded',
+                customCSS: `
+                    .rebate-widget-root button {
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 700;
+                    }
+                `
+            });
+
+            console.log('✅ All white-label widgets initialized successfully!');
+        } else {
+            console.error('❌ RebateLocator widget failed to load');
+        }
+    </script>
+</body>
+</html>
