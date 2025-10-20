@@ -13,7 +13,7 @@ const AnalyticsDashboard = () => {
     overview, 
     trendsData, 
     topCategories, 
-    geographicData, 
+    geographicData: _geographicData, 
     topZipCodes, 
     funnelData, 
     deviceData, 
@@ -23,6 +23,7 @@ const AnalyticsDashboard = () => {
   const COLORS = ['#0284c7', '#0ea5e9', '#38bdf8', '#7dd3fc'];
 
   // KPI Card Component
+  // eslint-disable-next-line no-unused-vars
   const KPICard = ({ title, value, subtitle, icon: Icon, trend, color }) => (
     <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
       <div className="flex items-start justify-between mb-4">
