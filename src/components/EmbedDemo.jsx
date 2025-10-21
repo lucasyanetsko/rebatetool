@@ -7,6 +7,7 @@ const EmbedDemo = () => {
   const [copiedProduct, setCopiedProduct] = useState(false);
   const [copiedCategory, setCopiedCategory] = useState(false);
   const [copiedStandalone, setCopiedStandalone] = useState(false);
+  const [copiedDirectory, setCopiedDirectory] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('light');
 
   // Use actual hosted URL (will be your Vercel URL after deployment)
@@ -144,6 +145,76 @@ const EmbedDemo = () => {
     navigator.clipboard.writeText(standalonePageCode);
     setCopiedStandalone(true);
     setTimeout(() => setCopiedStandalone(false), 2000);
+  };
+
+  const directoryPageCode = `<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Rebate Directory Page Header -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+    <input type="text" placeholder="Search for products with rebates" style="flex: 1; padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 8px;">
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <span style="font-size: 14px; color: #6b7280;">📍 Mooresville, NC 28117</span>
+      <button style="padding: 8px 16px; border: 2px solid #A50034; color: #A50034; border-radius: 4px; font-weight: 600; font-size: 14px; background: white;">Update</button>
+      <button style="padding: 8px 16px; border: 2px solid #A50034; color: #A50034; border-radius: 4px; font-weight: 600; font-size: 14px; background: white;">Locate</button>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <p style="font-size: 14px;"><strong>45 products found</strong></p>
+    <button style="padding: 8px 16px; border: 1px solid #d1d5db; border-radius: 4px; font-size: 14px; background: white;">🔽 Filter</button>
+  </div>
+  <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">Check with your utility to verify eligibility & requirements for residential rebate programs.</p>
+</div>
+
+<!-- Product Listings -->
+<div style="margin-bottom: 16px;">
+  <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div style="display: flex; gap: 16px;">
+      <div style="background: #e5e7eb; width: 80px; height: 80px; border-radius: 4px; flex-shrink: 0;"></div>
+      <div style="flex: 1;">
+        <h5 style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">4.2 cu. ft. Smart Wi-Fi Enabled Compact Front Load Dryer</h5>
+        <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Model #: DLHC1455W | ENERGY STAR Most Efficient</p>
+        <a href="#" style="font-size: 12px; color: #A50034; text-decoration: underline;">View Product</a>
+      </div>
+      <button style="background: #A50034; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; font-weight: 600; height: fit-content;">1 rebate</button>
+    </div>
+  </div>
+  <div style="background: white; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div style="display: flex; gap: 16px;">
+      <div style="background: #e5e7eb; width: 80px; height: 80px; border-radius: 4px; flex-shrink: 0;"></div>
+      <div style="flex: 1;">
+        <h5 style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">7.4 cu. ft. Ultra Large Capacity Heat Pump Ventless Dryer</h5>
+        <p style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Model #: DLHC1400ZB | ENERGY STAR Most Efficient</p>
+        <a href="#" style="font-size: 12px; color: #A50034; text-decoration: underline;">View Product</a>
+      </div>
+      <button style="background: #A50034; color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; font-weight: 600; height: fit-content;">1 rebate</button>
+    </div>
+  </div>
+</div>
+
+<!-- Widget Integration -->
+<div style="border-top: 2px dashed #9ca3af; padding-top: 16px;">
+  <p style="font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 12px;">💡 Or search by ZIP code:</p>
+  <div id="rebate-widget"></div>
+</div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
+  RebateLocator.init({
+    container: '#rebate-widget',
+    mode: 'embedded',
+    primaryColor: '#A50034'
+  });
+</script>`;
+
+  const handleCopyDirectory = () => {
+    navigator.clipboard.writeText(directoryPageCode);
+    setCopiedDirectory(true);
+    setTimeout(() => setCopiedDirectory(false), 2000);
   };
 
   return (
@@ -444,6 +515,102 @@ const EmbedDemo = () => {
           </div>
         </div>
       </div>
+
+        {/* Rebate Directory Page */}
+        <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+          <h3 className="text-xl font-semibold text-gray-900 mb-3 font-headline">
+            4. Rebate Directory / Search Results Page
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Display the widget on a rebate directory or search results page, similar to LG's current rebate portal. Perfect for creating a dedicated rebate center.
+          </p>
+          
+          {/* Code Example */}
+          <div className="mb-6">
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-sm font-semibold text-gray-700">Integration Code:</h4>
+              <button
+                onClick={handleCopyDirectory}
+                className="flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded text-sm transition-colors"
+              >
+                {copiedDirectory ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    Copy Code
+                  </>
+                )}
+              </button>
+            </div>
+            <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
+              <code>{directoryPageCode}</code>
+            </pre>
+          </div>
+
+          {/* Live Preview */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-700 mb-3">Live Preview:</h4>
+            <div className="bg-gray-50 rounded-lg p-6 border-2 border-dashed border-gray-300">
+              {/* Search Bar */}
+              <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+                <div className="flex gap-4 mb-4">
+                  <input 
+                    type="text" 
+                    placeholder="Search for products with rebates" 
+                    className="flex-1 px-4 py-2 border border-gray-300 rounded-lg"
+                    disabled
+                  />
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-gray-600">📍 Mooresville, NC 28117</span>
+                    <button className="px-4 py-2 border border-lg-heritage text-lg-heritage rounded hover:bg-gray-50 text-sm font-semibold">Update</button>
+                    <button className="px-4 py-2 border border-lg-heritage text-lg-heritage rounded hover:bg-gray-50 text-sm font-semibold">Locate</button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-sm"><strong>45 products found</strong></p>
+                  <button className="px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 text-sm">🔽 Filter</button>
+                </div>
+                <p className="text-xs text-gray-600 mt-2">Check with your utility to verify eligibility & requirements for residential rebate programs.</p>
+              </div>
+
+              {/* Product List Sample */}
+              <div className="space-y-4 mb-4">
+                <div className="bg-white rounded-lg p-4 shadow">
+                  <div className="flex gap-4">
+                    <div className="bg-gray-200 w-20 h-20 rounded flex items-center justify-center text-xs text-gray-500">Product</div>
+                    <div className="flex-1">
+                      <h5 className="font-semibold text-sm mb-1">4.2 cu. ft. Smart Wi-Fi Enabled Compact Front Load Dryer</h5>
+                      <p className="text-xs text-gray-600 mb-2">Model #: DLHC1455W | ENERGY STAR Most Efficient</p>
+                      <a href="#" className="text-xs text-lg-heritage underline">View Product</a>
+                    </div>
+                    <button className="bg-lg-heritage text-white px-4 py-2 rounded text-sm font-semibold h-fit">1 rebate</button>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg p-4 shadow">
+                  <div className="flex gap-4">
+                    <div className="bg-gray-200 w-20 h-20 rounded flex items-center justify-center text-xs text-gray-500">Product</div>
+                    <div className="flex-1">
+                      <h5 className="font-semibold text-sm mb-1">7.4 cu. ft. Ultra Large Capacity Heat Pump Ventless Dryer</h5>
+                      <p className="text-xs text-gray-600 mb-2">Model #: DLHC1400ZB | ENERGY STAR Most Efficient</p>
+                      <a href="#" className="text-xs text-lg-heritage underline">View Product</a>
+                    </div>
+                    <button className="bg-lg-heritage text-white px-4 py-2 rounded text-sm font-semibold h-fit">1 rebate</button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Widget Integration */}
+              <div className="border-t-2 border-dashed border-gray-400 pt-4">
+                <p className="text-sm font-semibold text-gray-700 mb-3">💡 Or search by ZIP code:</p>
+                <RebateLocator embedded={true} initialCategory="All" />
+              </div>
+            </div>
+          </div>
+        </div>
 
       {/* Integration Support */}
       <div className="mt-8 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl p-8 text-white">
