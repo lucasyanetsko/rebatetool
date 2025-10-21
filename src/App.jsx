@@ -66,7 +66,16 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-lg-heritage via-primary-800 to-primary-900 text-white py-20">
+      <div className="relative text-white py-20 overflow-hidden">
+        {/* LG Official Gradient Background */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url(/LG_Electronics_Gradient_03_RGB.jpg)' }}
+        ></div>
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+        {/* Content */}
+        <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h1 className="text-6xl font-bold mb-6 font-headline">
             Rebate Intelligence That Converts
@@ -106,6 +115,7 @@ const HomePage = () => {
               See Analytics →
             </Link>
           </div>
+        </div>
         </div>
       </div>
 
