@@ -138,6 +138,9 @@ The demo includes realistic mock data:
 ### Basic Usage
 
 ```html
+<!-- Load widget styles -->
+<link rel="stylesheet" href="https://your-project.vercel.app/widget.css">
+
 <!-- Add container -->
 <div id="rebate-widget"></div>
 

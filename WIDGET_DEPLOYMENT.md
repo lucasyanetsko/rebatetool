@@ -66,6 +66,9 @@ Test these URLs:
 Copy this code to any HTML page:
 
 ```html
+<!-- Load the widget styles (required) -->
+<link rel="stylesheet" href="https://YOUR-PROJECT.vercel.app/widget.css">
+
 <!-- Add the widget container -->
 <div id="rebate-widget"></div>
 
@@ -80,6 +83,8 @@ Copy this code to any HTML page:
   });
 </script>
 ```
+
+**Important**: Both `widget.css` and `widget.iife.js` are required for the widget to work properly.
 
 ### Configuration Options
 

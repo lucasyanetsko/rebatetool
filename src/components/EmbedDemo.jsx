@@ -8,8 +8,10 @@ const EmbedDemo = () => {
 
   // Use actual hosted URL (will be your Vercel URL after deployment)
   const widgetUrl = window.location.origin + '/widget.iife.js';
+  const widgetCssUrl = window.location.origin + '/widget.css';
   
-  const embedCode = `<!-- Rebate Locator Widget -->
+  const embedCode = `<!-- Everblue Catalyst Widget -->
+<link rel="stylesheet" href="${widgetCssUrl}">
 <div id="rebate-locator-widget"></div>
 <script src="${widgetUrl}"></script>
 <script>
