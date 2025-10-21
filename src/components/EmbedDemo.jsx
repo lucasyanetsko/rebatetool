@@ -226,7 +226,7 @@ const EmbedDemo = () => {
           </pre>
           <button
             onClick={handleCopy}
-            className="absolute top-4 right-4 flex items-center gap-2 px-3 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
             aria-label={copied ? "Code copied" : "Copy code to clipboard"}
           >
             {copied ? (
@@ -237,7 +237,7 @@ const EmbedDemo = () => {
             ) : (
               <>
                 <Copy className="w-4 h-4" aria-hidden="true" />
-                Copy
+                Copy Code
               </>
             )}
           </button>
