@@ -167,7 +167,8 @@ export const analyticsData = {
     { stage: "Tool Visitors", count: 45823, percentage: 100 },
     { stage: "Performed Search", count: 32456, percentage: 70.8 },
     { stage: "Clicked Rebate", count: 18923, percentage: 58.3 },
-    { stage: "Outbound Click", count: 12456, percentage: 65.8 },
+    { stage: "Downloaded Form", count: 15234, percentage: 80.5 },
+    { stage: "Outbound Click", count: 12456, percentage: 81.8 },
   ],
   deviceData: [
     { device: "Desktop", count: 18329, percentage: 40 },
@@ -180,6 +181,19 @@ export const analyticsData = {
     { name: "Water Heater Efficiency", clicks: 3892, conversions: 2345, value: "$1,800" },
     { name: "Induction Cooktop", clicks: 2456, conversions: 1567, value: "$840" },
     { name: "Smart Thermostat", clicks: 2123, conversions: 1234, value: "$100" },
+  ],
+  channelData: [
+    { channel: "Organic Search", visitors: 18329, percentage: 40, conversions: 7823 },
+    { channel: "Direct", visitors: 13747, percentage: 30, conversions: 5234 },
+    { channel: "Referral", visitors: 9165, percentage: 20, conversions: 3456 },
+    { channel: "Paid Search", visitors: 4582, percentage: 10, conversions: 1943 },
+  ],
+  providerData: [
+    { provider: "Federal IRA Program", searches: 15234, clicks: 8923, conversions: 5234 },
+    { provider: "Southern California Edison", searches: 8456, clicks: 4892, conversions: 2789 },
+    { provider: "Con Edison", searches: 6782, clicks: 3945, conversions: 2345 },
+    { provider: "PG&E California", searches: 4523, clicks: 2678, conversions: 1567 },
+    { provider: "ComEd Illinois", searches: 3892, clicks: 2123, conversions: 1234 },
   ]
 };
 

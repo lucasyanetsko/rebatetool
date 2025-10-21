@@ -13,11 +13,13 @@ const AnalyticsDashboard = () => {
     overview, 
     trendsData, 
     topCategories, 
-    geographicData: _geographicData, 
+    geographicData, 
     topZipCodes, 
     funnelData, 
     deviceData, 
-    topRebates 
+    topRebates,
+    channelData,
+    providerData
   } = analyticsData;
 
   const COLORS = ['#A50034', '#FD312E', '#d42d5e', '#f17797'];
@@ -248,37 +250,147 @@ const AnalyticsDashboard = () => {
         </div>
       </div>
 
-      {/* Conversion Funnel */}
-      <div className="bg-white rounded-xl shadow-md p-6 mb-8 border border-gray-200">
-        <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
-          Conversion Funnel
-        </h2>
-        <div className="space-y-4">
-          {funnelData.map((stage, index) => (
-            <div key={stage.stage}>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">{stage.stage}</span>
-                <span className="text-sm font-semibold text-gray-900">
-                  {stage.count.toLocaleString()} ({stage.percentage}%)
-                </span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
-                <div
-                  className="h-6 rounded-full flex items-center justify-end pr-3 text-white text-xs font-semibold transition-all"
-                  style={{
-                    width: `${stage.percentage}%`,
-                    backgroundColor: COLORS[index % COLORS.length]
-                  }}
-                >
-                  {stage.percentage > 20 && `${stage.percentage}%`}
+      {/* Conversion Funnel & Channel Attribution */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Conversion Funnel */}
+        <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+          <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
+            Conversion Funnel
+          </h2>
+          <div className="space-y-4">
+            {funnelData.map((stage, index) => (
+              <div key={stage.stage}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700">{stage.stage}</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    {stage.count.toLocaleString()} ({stage.percentage}%)
+                  </span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                  <div
+                    className="h-6 rounded-full flex items-center justify-end pr-3 text-white text-xs font-semibold transition-all"
+                    style={{
+                      width: `${stage.percentage}%`,
+                      backgroundColor: COLORS[index % COLORS.length]
+                    }}
+                  >
+                    {stage.percentage > 20 && `${stage.percentage}%`}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Channel Attribution */}
+        <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+          <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
+            Channel Attribution
+          </h2>
+          <div className="space-y-4">
+            {channelData.map((channel, index) => (
+              <div key={channel.channel}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700">{channel.channel}</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    {channel.visitors.toLocaleString()} visitors ({channel.percentage}%)
+                  </span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-6 overflow-hidden">
+                  <div
+                    className="h-6 rounded-full flex items-center justify-end pr-3 text-white text-xs font-semibold transition-all"
+                    style={{
+                      width: `${channel.percentage}%`,
+                      backgroundColor: COLORS[index % COLORS.length]
+                    }}
+                  >
+                    {channel.percentage}%
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-1">
+                  {channel.conversions.toLocaleString()} conversions
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Top Performing Rebates & Geographic Insights */}
+      {/* Provider Performance */}
+      <div className="bg-white rounded-xl shadow-md p-6 mb-8 border border-gray-200">
+        <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
+          Provider Performance
+        </h2>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={providerData} layout="vertical">
+            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <XAxis type="number" stroke="#6b7280" />
+            <YAxis 
+              dataKey="provider" 
+              type="category" 
+              stroke="#6b7280"
+              width={180}
+            />
+            <Tooltip 
+              contentStyle={{ 
+                backgroundColor: '#fff', 
+                border: '1px solid #e5e7eb',
+                borderRadius: '0.5rem' 
+              }}
+            />
+            <Legend />
+            <Bar dataKey="searches" fill="#A50034" name="Searches" />
+            <Bar dataKey="clicks" fill="#FD312E" name="Clicks" />
+            <Bar dataKey="conversions" fill="#22c55e" name="Conversions" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Geographic Heatmap */}
+      <div className="bg-white rounded-xl shadow-md p-6 mb-8 border border-gray-200">
+        <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
+          Geographic Distribution
+        </h2>
+        <p className="text-sm text-gray-600 mb-6">
+          Search activity by state (heatmap visualization)
+        </p>
+        <div className="space-y-3">
+          {geographicData.map((location, index) => {
+            const maxSearches = Math.max(...geographicData.map(l => l.searches));
+            const intensity = (location.searches / maxSearches) * 100;
+            return (
+              <div key={location.state}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700 w-32">{location.state}</span>
+                  <div className="flex-1 mx-4">
+                    <div className="w-full bg-gray-200 rounded-full h-8 overflow-hidden">
+                      <div
+                        className="h-8 rounded-full flex items-center justify-end pr-3 text-white text-xs font-semibold transition-all"
+                        style={{
+                          width: `${intensity}%`,
+                          backgroundColor: `rgba(165, 0, 52, ${0.3 + (intensity / 100) * 0.7})`
+                        }}
+                      >
+                        {intensity > 30 && `${location.searches.toLocaleString()}`}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right w-40">
+                    <p className="text-sm font-semibold text-gray-900">
+                      {location.searches.toLocaleString()} searches
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {location.clicks.toLocaleString()} clicks
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Top Performing Rebates & Top ZIP Codes */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Top Performing Rebates */}
         <div className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
