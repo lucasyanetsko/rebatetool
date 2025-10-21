@@ -233,9 +233,6 @@ const HomePage = () => {
           <p className="text-sm text-gray-400">
             Demo for LG Electronics Home Appliances & HVAC Division • WCAG 2.2 AA Compliant
           </p>
-          <p className="text-sm text-gray-400 mt-2">
-            Built with React, Tailwind CSS, and Recharts
-          </p>
         </div>
       </footer>
     </div>
