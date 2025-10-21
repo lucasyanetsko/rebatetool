@@ -4,6 +4,9 @@ import RebateLocator from './RebateLocator';
 
 const EmbedDemo = () => {
   const [copied, setCopied] = useState(false);
+  const [copiedProduct, setCopiedProduct] = useState(false);
+  const [copiedCategory, setCopiedCategory] = useState(false);
+  const [copiedStandalone, setCopiedStandalone] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('light');
 
   // Use actual hosted URL (will be your Vercel URL after deployment)
@@ -22,10 +25,125 @@ const EmbedDemo = () => {
   });
 </script>`;
 
+  const productPageCode = `<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Product Card (your existing product page HTML) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <div style="display: flex; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb;">
+    <div style="background: #e5e7eb; width: 96px; height: 96px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 12px;">
+      Product Image
+    </div>
+    <div>
+      <h3 style="font-size: 18px; font-weight: bold; color: #111827; margin-bottom: 4px;">LG Heat Pump HVAC System</h3>
+      <p style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Model: HVAC-HP-2024</p>
+      <p style="font-size: 24px; font-weight: bold; color: #A50034;">$8,999</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Check available rebates below ↓</p>
+</div>
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
+  RebateLocator.init({
+    container: '#rebate-widget',
+    mode: 'embedded',
+    category: 'HVAC',
+    primaryColor: '#A50034'
+  });
+</script>`;
+
+  const categoryPageCode = `<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Category Page Header (your existing category page HTML) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <h2 style="font-size: 24px; font-weight: bold; color: #111827; margin-bottom: 16px;">HVAC Systems</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Heat Pump</p>
+    </div>
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Air Handler</p>
+    </div>
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Furnace</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Available rebates for HVAC products ↓</p>
+</div>
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
+  RebateLocator.init({
+    container: '#rebate-widget',
+    mode: 'embedded',
+    category: 'HVAC',
+    primaryColor: '#A50034'
+  });
+</script>`;
+
+  const standalonePageCode = `<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Page Header (optional) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;">
+  <h1 style="font-size: 32px; font-weight: bold; color: #111827; margin-bottom: 8px;">Find Your Rebates</h1>
+  <p style="font-size: 18px; color: #6b7280;">Discover federal, state, and local rebates for energy-efficient products</p>
+</div>
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
+  RebateLocator.init({
+    container: '#rebate-widget',
+    mode: 'embedded',
+    primaryColor: '#A50034'
+  });
+</script>`;
+
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleCopyProduct = () => {
+    navigator.clipboard.writeText(productPageCode);
+    setCopiedProduct(true);
+    setTimeout(() => setCopiedProduct(false), 2000);
+  };
+
+  const handleCopyCategory = () => {
+    navigator.clipboard.writeText(categoryPageCode);
+    setCopiedCategory(true);
+    setTimeout(() => setCopiedCategory(false), 2000);
+  };
+
+  const handleCopyStandalone = () => {
+    navigator.clipboard.writeText(standalonePageCode);
+    setCopiedStandalone(true);
+    setTimeout(() => setCopiedStandalone(false), 2000);
   };
 
   return (
@@ -159,41 +277,27 @@ const EmbedDemo = () => {
           
           {/* Code Example */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-sm font-semibold text-gray-700">Integration Code:</h4>
+              <button
+                onClick={handleCopyProduct}
+                className="flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded text-sm transition-colors"
+              >
+                {copiedProduct ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    Copy Code
+                  </>
+                )}
+              </button>
+            </div>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<!-- Load widget styles -->
-<link rel="stylesheet" href="${widgetCssUrl}">
-
-<!-- Product Card (your existing product page HTML) -->
-<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <div style="display: flex; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb;">
-    <div style="background: #e5e7eb; width: 96px; height: 96px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 12px;">
-      Product Image
-    </div>
-    <div>
-      <h3 style="font-size: 18px; font-weight: bold; color: #111827; margin-bottom: 4px;">LG Heat Pump HVAC System</h3>
-      <p style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Model: HVAC-HP-2024</p>
-      <p style="font-size: 24px; font-weight: bold; color: #A50034;">$8,999</p>
-    </div>
-  </div>
-  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Check available rebates below ↓</p>
-</div>
-
-<!-- Widget container -->
-<div id="rebate-widget"></div>
-
-<!-- Load widget script -->
-<script src="${widgetUrl}"></script>
-
-<!-- Initialize widget -->
-<script>
-  RebateLocator.init({
-    container: '#rebate-widget',
-    mode: 'embedded',
-    category: 'HVAC',
-    primaryColor: '#A50034'
-  });
-</script>`}</code>
+              <code>{productPageCode}</code>
             </pre>
           </div>
 
@@ -236,46 +340,27 @@ const EmbedDemo = () => {
           
           {/* Code Example */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-sm font-semibold text-gray-700">Integration Code:</h4>
+              <button
+                onClick={handleCopyCategory}
+                className="flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded text-sm transition-colors"
+              >
+                {copiedCategory ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    Copy Code
+                  </>
+                )}
+              </button>
+            </div>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<!-- Load widget styles -->
-<link rel="stylesheet" href="${widgetCssUrl}">
-
-<!-- Category Page Header (your existing category page HTML) -->
-<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-  <h2 style="font-size: 24px; font-weight: bold; color: #111827; margin-bottom: 16px;">HVAC Systems</h2>
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
-    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
-      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
-      <p style="font-size: 12px; font-weight: 600;">Heat Pump</p>
-    </div>
-    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
-      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
-      <p style="font-size: 12px; font-weight: 600;">Air Handler</p>
-    </div>
-    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
-      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
-      <p style="font-size: 12px; font-weight: 600;">Furnace</p>
-    </div>
-  </div>
-  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Available rebates for HVAC products ↓</p>
-</div>
-
-<!-- Widget container -->
-<div id="rebate-widget"></div>
-
-<!-- Load widget script -->
-<script src="${widgetUrl}"></script>
-
-<!-- Initialize widget -->
-<script>
-  RebateLocator.init({
-    container: '#rebate-widget',
-    mode: 'embedded',
-    category: 'HVAC',
-    primaryColor: '#A50034'
-  });
-</script>`}</code>
+              <code>{categoryPageCode}</code>
             </pre>
           </div>
 
@@ -323,31 +408,27 @@ const EmbedDemo = () => {
           
           {/* Code Example */}
           <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="text-sm font-semibold text-gray-700">Integration Code:</h4>
+              <button
+                onClick={handleCopyStandalone}
+                className="flex items-center gap-2 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-white rounded text-sm transition-colors"
+              >
+                {copiedStandalone ? (
+                  <>
+                    <Check className="w-4 h-4" />
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    Copy Code
+                  </>
+                )}
+              </button>
+            </div>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<!-- Load widget styles -->
-<link rel="stylesheet" href="${widgetCssUrl}">
-
-<!-- Page Header (optional) -->
-<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;">
-  <h1 style="font-size: 32px; font-weight: bold; color: #111827; margin-bottom: 8px;">Find Your Rebates</h1>
-  <p style="font-size: 18px; color: #6b7280;">Discover federal, state, and local rebates for energy-efficient products</p>
-</div>
-
-<!-- Widget container -->
-<div id="rebate-widget"></div>
-
-<!-- Load widget script -->
-<script src="${widgetUrl}"></script>
-
-<!-- Initialize widget -->
-<script>
-  RebateLocator.init({
-    container: '#rebate-widget',
-    mode: 'embedded',
-    primaryColor: '#A50034'
-  });
-</script>`}</code>
+              <code>{standalonePageCode}</code>
             </pre>
           </div>
 
