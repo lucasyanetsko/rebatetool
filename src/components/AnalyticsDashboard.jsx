@@ -7,7 +7,6 @@ import {
   Download, Filter, Calendar 
 } from 'lucide-react';
 import { analyticsData } from '../data/mockData';
-import USHeatmap from './USHeatmap';
 
 const AnalyticsDashboard = () => {
   const { 
@@ -347,34 +346,47 @@ const AnalyticsDashboard = () => {
         </ResponsiveContainer>
       </div>
 
-      {/* Geographic Heatmap */}
+      {/* Geographic Distribution */}
       <div className="bg-white rounded-xl shadow-md p-6 mb-8 border border-gray-200">
         <h2 className="text-xl font-bold text-gray-900 mb-6 font-headline">
-          Geographic Distribution Heatmap
+          Geographic Distribution
         </h2>
         <p className="text-sm text-gray-600 mb-6">
-          Rebate search activity by state. Darker shades of LG Heritage Red indicate higher search volume.
+          Search activity by state. Darker bars indicate higher search volume.
         </p>
-        <USHeatmap data={geographicData} />
-        
-        {/* Data table below map */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {geographicData.map((location) => (
-            <div 
-              key={location.state}
-              className="p-4 bg-gray-50 rounded-lg"
-            >
-              <p className="font-semibold text-gray-900 mb-2">{location.state}</p>
-              <div className="space-y-1 text-sm">
-                <p className="text-gray-600">
-                  <span className="font-medium">Searches:</span> {location.searches.toLocaleString()}
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-medium">Clicks:</span> {location.clicks.toLocaleString()}
-                </p>
+        <div className="space-y-3">
+          {geographicData.map((location) => {
+            const maxSearches = Math.max(...geographicData.map(l => l.searches));
+            const intensity = (location.searches / maxSearches) * 100;
+            return (
+              <div key={location.state}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700 w-32">{location.state}</span>
+                  <div className="flex-1 mx-4">
+                    <div className="w-full bg-gray-200 rounded-full h-8 overflow-hidden">
+                      <div
+                        className="h-8 rounded-full flex items-center justify-end pr-3 text-white text-xs font-semibold transition-all"
+                        style={{
+                          width: `${intensity}%`,
+                          backgroundColor: `rgba(165, 0, 52, ${0.3 + (intensity / 100) * 0.7})`
+                        }}
+                      >
+                        {intensity > 30 && `${location.searches.toLocaleString()}`}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-right w-40">
+                    <p className="text-sm font-semibold text-gray-900">
+                      {location.searches.toLocaleString()} searches
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {location.clicks.toLocaleString()} clicks
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
