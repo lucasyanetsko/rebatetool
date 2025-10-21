@@ -1,8 +1,8 @@
 {
-  "name": "rebate-locator-demo",
+  "name": "everblue-catalyst",
   "private": true,
   "version": "1.0.0",
-  "description": "Enterprise rebate locator platform for LG Electronics - Demo for RFP",
+  "description": "Everblue Catalyst - Rebate Intelligence That Converts. Enterprise platform for LG Electronics RFP.",
   "type": "module",
   "scripts": {
     "dev": "vite",

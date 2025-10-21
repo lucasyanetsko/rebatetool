@@ -1,10 +1,14 @@
-# EcoRebates - Home Appliance Rebate Locator Platform
+# Everblue Catalyst - Rebate Intelligence Platform
+
+**Rebate Intelligence That Converts**
+
+> **By Everblue** - Powering energy-efficient purchasing decisions
+
+Everblue Catalyst delivers location-aware rebate discovery with enterprise analytics. Track engagement, optimize conversions, and prove ROI—all while keeping customers on your site.
 
 **Demo Platform for LG Electronics RFP**
 
-A comprehensive rebate discovery platform designed for home appliances and HVAC systems with enterprise-grade analytics and **production-ready embeddable widget**.
-
-🎉 **NEW**: This demo now includes a **fully functional, copy-paste embeddable widget** that works on any website!
+🎉 **Production-Ready**: Includes a **fully functional, embeddable widget** with white-label customization that works on any website in 3 lines of code.
 
 ## 🎯 Overview
 

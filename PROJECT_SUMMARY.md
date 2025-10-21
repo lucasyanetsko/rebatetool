@@ -1,4 +1,4 @@
-# 🎉 Project Summary - EcoRebates Platform Demo
+# 🎉 Project Summary - Everblue Catalyst Platform Demo
 
 ## What We Built
 
@@ -294,7 +294,7 @@ primary: {
 ```
 
 ### Update Company Name
-Search and replace "EcoRebates" with your preferred name
+Platform is branded as "Everblue Catalyst" - fully customizable for white-label deployments
 
 ### Add Your Logo
 Replace icon in navigation (App.jsx line ~40)

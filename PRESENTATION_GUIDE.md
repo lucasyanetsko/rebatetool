@@ -1,4 +1,6 @@
-# Presentation Guide - EcoRebates Platform Demo
+# Presentation Guide - Everblue Catalyst Platform Demo
+
+**Rebate Intelligence That Converts**
 
 ## 🎯 Quick Demo Script (5-10 minutes)
 

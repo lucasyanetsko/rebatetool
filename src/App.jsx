@@ -27,10 +27,10 @@ const Navigation = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900 font-headline">
-                EcoRebates
+                Everblue Catalyst
               </h1>
               <p className="text-xs text-gray-500">
-                Home Appliance Rebate Platform
+                Rebate Intelligence Platform
               </p>
             </div>
           </div>
@@ -66,27 +66,44 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-16">
+      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-5xl font-bold mb-4 font-headline">
-            Eco Rebate Locator Platform
+          <h1 className="text-6xl font-bold mb-6 font-headline">
+            Rebate Intelligence That Converts
           </h1>
-          <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-            Enterprise-grade rebate discovery platform for home appliances and HVAC systems. 
-            Designed for LG Electronics with comprehensive analytics and white-label embedding.
+          <p className="text-xl text-primary-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Everblue Catalyst delivers location-aware rebate discovery with enterprise analytics. 
+            Track engagement, optimize conversions, and prove ROI—all while keeping customers on your site.
           </p>
+          
+          {/* Feature Badges */}
+          <div className="flex flex-wrap gap-6 justify-center mb-10 max-w-3xl mx-auto">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <Code className="w-5 h-5 text-primary-100" aria-hidden="true" />
+              <span className="text-sm font-semibold">Deploy in 3 Lines of Code</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <FileText className="w-5 h-5 text-primary-100" aria-hidden="true" />
+              <span className="text-sm font-semibold">White-Label Ready</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
+              <LayoutDashboard className="w-5 h-5 text-primary-100" aria-hidden="true" />
+              <span className="text-sm font-semibold">Real-Time Analytics</span>
+            </div>
+          </div>
+
           <div className="flex gap-4 justify-center">
             <Link
               to="/embed"
-              className="px-6 py-3 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700"
+              className="px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700 text-lg"
             >
-              View Integration Demo
+              View Live Demo →
             </Link>
             <Link
               to="/analytics"
-              className="px-6 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700"
+              className="px-8 py-4 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700 text-lg"
             >
-              Explore Analytics
+              See Analytics →
             </Link>
           </div>
         </div>
@@ -193,7 +210,7 @@ const HomePage = () => {
       <footer className="bg-gray-800 text-gray-300 py-8">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <p className="mb-2">
-            <strong className="text-white">EcoRebates Platform</strong> - Enterprise Rebate Locator Solution
+            <strong className="text-white">Everblue Catalyst</strong> - Enterprise Rebate Intelligence Platform
           </p>
           <p className="text-sm text-gray-400">
             Demo for LG Electronics Home Appliances & HVAC Division • WCAG 2.2 AA Compliant
