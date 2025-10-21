@@ -224,8 +224,8 @@ const RebateLocator = ({ embedded = false, initialCategory = 'All' }) => {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
-            <div className="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+          <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl p-6">
+            <div className="bg-lg-heritage w-12 h-12 rounded-full flex items-center justify-center mb-4">
               <MapPin className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <h3 className="text-lg font-bold text-gray-900 mb-2 font-headline">Local Programs</h3>

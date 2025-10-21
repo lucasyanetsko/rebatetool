@@ -18,7 +18,7 @@ const EmbedDemo = () => {
   RebateLocator.init({
     container: '#rebate-locator-widget',
     mode: 'embedded',
-    primaryColor: '#0284c7'
+    primaryColor: '#A50034'
   });
 </script>`;
 

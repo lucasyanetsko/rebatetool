@@ -20,7 +20,7 @@ const AnalyticsDashboard = () => {
     topRebates 
   } = analyticsData;
 
-  const COLORS = ['#0284c7', '#0ea5e9', '#38bdf8', '#7dd3fc'];
+  const COLORS = ['#A50034', '#FD312E', '#d42d5e', '#f17797'];
 
   // KPI Card Component
   // eslint-disable-next-line no-unused-vars
@@ -106,7 +106,7 @@ const AnalyticsDashboard = () => {
           subtitle="Rebate detail views"
           icon={MousePointer}
           trend="+15.7%"
-          color="bg-blue-600"
+          color="bg-lg-heritage"
         />
         <KPICard
           title="Conversion Rate"
@@ -139,7 +139,7 @@ const AnalyticsDashboard = () => {
             <Line 
               type="monotone" 
               dataKey="visitors" 
-              stroke="#0284c7" 
+              stroke="#A50034" 
               strokeWidth={2}
               name="Visitors"
               dot={{ r: 4 }}
@@ -147,7 +147,7 @@ const AnalyticsDashboard = () => {
             <Line 
               type="monotone" 
               dataKey="searches" 
-              stroke="#0ea5e9" 
+              stroke="#FD312E" 
               strokeWidth={2}
               name="Searches"
               dot={{ r: 4 }}
@@ -155,7 +155,7 @@ const AnalyticsDashboard = () => {
             <Line 
               type="monotone" 
               dataKey="clicks" 
-              stroke="#38bdf8" 
+              stroke="#d42d5e" 
               strokeWidth={2}
               name="Clicks"
               dot={{ r: 4 }}
@@ -199,8 +199,8 @@ const AnalyticsDashboard = () => {
                 }}
               />
               <Legend />
-              <Bar dataKey="clicks" fill="#0284c7" name="Clicks" />
-              <Bar dataKey="searches" fill="#38bdf8" name="Searches" />
+              <Bar dataKey="clicks" fill="#A50034" name="Clicks" />
+              <Bar dataKey="searches" fill="#FD312E" name="Searches" />
             </BarChart>
           </ResponsiveContainer>
         </div>

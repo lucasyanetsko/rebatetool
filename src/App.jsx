@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="bg-primary-600 p-2 rounded-lg">
+            <div className="bg-lg-heritage p-2 rounded-lg">
               <FileText className="w-6 h-6 text-white" aria-hidden="true" />
             </div>
             <div>
@@ -66,7 +66,7 @@ const HomePage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20">
+      <div className="bg-gradient-to-br from-lg-heritage via-primary-800 to-primary-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <h1 className="text-6xl font-bold mb-6 font-headline">
             Rebate Intelligence That Converts
@@ -95,13 +95,13 @@ const HomePage = () => {
           <div className="flex gap-4 justify-center">
             <Link
               to="/embed"
-              className="px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700 text-lg"
+              className="px-8 py-4 bg-white text-lg-heritage font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-lg"
             >
               View Live Demo →
             </Link>
             <Link
               to="/analytics"
-              className="px-8 py-4 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-400 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700 text-lg"
+              className="px-8 py-4 bg-lg-active text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-lg"
             >
               See Analytics →
             </Link>
@@ -110,7 +110,7 @@ const HomePage = () => {
       </div>
 
       {/* Key Features */}
-      <div className="bg-gray-50 py-16">
+      <div className="bg-lg-warm-grey py-16">
         <div className="max-w-7xl mx-auto px-8">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 font-headline">
             Platform Capabilities
@@ -118,7 +118,7 @@ const HomePage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-md">
               <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Search className="w-6 h-6 text-primary-600" aria-hidden="true" />
+                <Search className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
                 Smart Rebate Discovery
@@ -132,8 +132,8 @@ const HomePage = () => {
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <LayoutDashboard className="w-6 h-6 text-green-600" aria-hidden="true" />
+              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <LayoutDashboard className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
                 Advanced Analytics
@@ -147,8 +147,8 @@ const HomePage = () => {
             </div>
 
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-blue-600" aria-hidden="true" />
+              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <Code className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
                 Enterprise Integration
