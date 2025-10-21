@@ -164,6 +164,21 @@ const EmbedDemo = () => {
               <code>{`<!-- Load widget styles -->
 <link rel="stylesheet" href="${widgetCssUrl}">
 
+<!-- Product Card (your existing product page HTML) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <div style="display: flex; gap: 16px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e7eb;">
+    <div style="background: #e5e7eb; width: 96px; height: 96px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9ca3af; font-size: 12px;">
+      Product Image
+    </div>
+    <div>
+      <h3 style="font-size: 18px; font-weight: bold; color: #111827; margin-bottom: 4px;">LG Heat Pump HVAC System</h3>
+      <p style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">Model: HVAC-HP-2024</p>
+      <p style="font-size: 24px; font-weight: bold; color: #A50034;">$8,999</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Check available rebates below ↓</p>
+</div>
+
 <!-- Widget container -->
 <div id="rebate-widget"></div>
 
@@ -174,9 +189,9 @@ const EmbedDemo = () => {
 <script>
   RebateLocator.init({
     container: '#rebate-widget',
-    mode: 'product',
-    productSku: 'HVAC-HP-2024',
-    autoPopulateZip: true
+    mode: 'embedded',
+    category: 'HVAC',
+    primaryColor: '#A50034'
   });
 </script>`}</code>
             </pre>
@@ -226,6 +241,26 @@ const EmbedDemo = () => {
               <code>{`<!-- Load widget styles -->
 <link rel="stylesheet" href="${widgetCssUrl}">
 
+<!-- Category Page Header (your existing category page HTML) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+  <h2 style="font-size: 24px; font-weight: bold; color: #111827; margin-bottom: 16px;">HVAC Systems</h2>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;">
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Heat Pump</p>
+    </div>
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Air Handler</p>
+    </div>
+    <div style="background: #f3f4f6; border-radius: 8px; padding: 16px; text-align: center;">
+      <div style="background: #e5e7eb; width: 100%; height: 80px; border-radius: 4px; margin-bottom: 8px;"></div>
+      <p style="font-size: 12px; font-weight: 600;">Furnace</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: #6b7280; font-style: italic;">💡 Available rebates for HVAC products ↓</p>
+</div>
+
 <!-- Widget container -->
 <div id="rebate-widget"></div>
 
@@ -236,9 +271,9 @@ const EmbedDemo = () => {
 <script>
   RebateLocator.init({
     container: '#rebate-widget',
-    mode: 'category',
+    mode: 'embedded',
     category: 'HVAC',
-    showAllResults: true
+    primaryColor: '#A50034'
   });
 </script>`}</code>
             </pre>
@@ -293,6 +328,12 @@ const EmbedDemo = () => {
               <code>{`<!-- Load widget styles -->
 <link rel="stylesheet" href="${widgetCssUrl}">
 
+<!-- Page Header (optional) -->
+<div style="background: white; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;">
+  <h1 style="font-size: 32px; font-weight: bold; color: #111827; margin-bottom: 8px;">Find Your Rebates</h1>
+  <p style="font-size: 18px; color: #6b7280;">Discover federal, state, and local rebates for energy-efficient products</p>
+</div>
+
 <!-- Widget container -->
 <div id="rebate-widget"></div>
 
@@ -303,9 +344,8 @@ const EmbedDemo = () => {
 <script>
   RebateLocator.init({
     container: '#rebate-widget',
-    mode: 'standalone',
-    showFilters: true,
-    enableAnalytics: true
+    mode: 'embedded',
+    primaryColor: '#A50034'
   });
 </script>`}</code>
             </pre>
