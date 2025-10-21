@@ -7,7 +7,7 @@ import {
   Download, Filter, Calendar 
 } from 'lucide-react';
 import { analyticsData } from '../data/mockData';
-import USMap from './USMap';
+import USHeatmap from './USHeatmap';
 
 const AnalyticsDashboard = () => {
   const { 
@@ -353,9 +353,9 @@ const AnalyticsDashboard = () => {
           Geographic Distribution Heatmap
         </h2>
         <p className="text-sm text-gray-600 mb-6">
-          Rebate search activity by state. Darker shades indicate higher search volume.
+          Rebate search activity by state. Darker shades of LG Heritage Red indicate higher search volume.
         </p>
-        <USMap data={geographicData} />
+        <USHeatmap data={geographicData} />
         
         {/* Data table below map */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
