@@ -31,20 +31,20 @@ const EmbedDemo = () => {
   return (
     <div className="max-w-7xl mx-auto p-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-3 font-headline">
+      <div className="mb-12">
+        <h1 className="text-5xl font-bold text-gray-900 mb-4 font-headline">
           Embeddable Widget Demo
         </h1>
-        <p className="text-lg text-gray-600 mb-4">
+        <p className="text-2xl text-gray-600 mb-6">
           White-label rebate locator that seamlessly integrates into any website
         </p>
-        <div className="bg-green-50 border-2 border-green-200 rounded-lg p-4 flex items-start gap-3">
-          <span className="text-2xl">✅</span>
+        <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6 flex items-start gap-4">
+          <span className="text-3xl">✅</span>
           <div>
-            <p className="font-semibold text-green-900 mb-1">
+            <p className="font-semibold text-green-900 mb-2 text-xl">
               This is a REAL, working embeddable widget with white-label customization!
             </p>
-            <p className="text-green-800 text-sm">
+            <p className="text-green-800 text-lg">
               The code shown below is production-ready and can be copied to any website.{' '}
               <a 
                 href="/white-label-demo.html" 

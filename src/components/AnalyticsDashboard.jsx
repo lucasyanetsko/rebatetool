@@ -46,36 +46,36 @@ const AnalyticsDashboard = () => {
   return (
     <div className="max-w-7xl mx-auto p-8">
       {/* Header */}
-      <div className="mb-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+      <div className="mb-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2 font-headline">
+            <h1 className="text-5xl font-bold text-gray-900 mb-3 font-headline">
               Analytics Dashboard
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-xl">
               Real-time insights into rebate locator performance
             </p>
           </div>
           <div className="flex gap-3">
             <button 
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="flex items-center gap-2 px-5 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 text-base"
               aria-label="Filter dashboard data"
             >
-              <Filter className="w-4 h-4" aria-hidden="true" />
+              <Filter className="w-5 h-5" aria-hidden="true" />
               Filter
             </button>
             <button 
-              className="flex items-center gap-2 px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
+              className="flex items-center gap-2 px-5 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 text-base"
               aria-label="Select date range"
             >
-              <Calendar className="w-4 h-4" aria-hidden="true" />
+              <Calendar className="w-5 h-5" aria-hidden="true" />
               Last 30 Days
             </button>
             <button 
-              className="flex items-center gap-2 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+              className="flex items-center gap-2 px-5 py-3 bg-lg-heritage text-white rounded-lg hover:bg-primary-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 text-base font-semibold"
               aria-label="Export dashboard data"
             >
-              <Download className="w-4 h-4" aria-hidden="true" />
+              <Download className="w-5 h-5" aria-hidden="true" />
               Export
             </button>
           </div>

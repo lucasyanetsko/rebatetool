@@ -77,40 +77,40 @@ const HomePage = () => {
         {/* Content */}
         <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-8 text-center">
-          <h1 className="text-6xl font-bold mb-6 font-headline">
+          <h1 className="text-7xl md:text-8xl font-bold mb-8 font-headline leading-tight">
             Rebate Intelligence That Converts
           </h1>
-          <p className="text-xl text-primary-100 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl md:text-3xl text-white mb-12 max-w-4xl mx-auto leading-relaxed font-light">
             Everblue Catalyst delivers location-aware rebate discovery with enterprise analytics. 
             Track engagement, optimize conversions, and prove ROI—all while keeping customers on your site.
           </p>
           
           {/* Feature Badges */}
-          <div className="flex flex-wrap gap-6 justify-center mb-10 max-w-3xl mx-auto">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <Code className="w-5 h-5 text-primary-100" aria-hidden="true" />
-              <span className="text-sm font-semibold">Deploy in 3 Lines of Code</span>
+          <div className="flex flex-wrap gap-6 justify-center mb-12 max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg">
+              <Code className="w-6 h-6 text-white" aria-hidden="true" />
+              <span className="text-lg font-semibold">Deploy in 3 Lines of Code</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <FileText className="w-5 h-5 text-primary-100" aria-hidden="true" />
-              <span className="text-sm font-semibold">White-Label Ready</span>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg">
+              <FileText className="w-6 h-6 text-white" aria-hidden="true" />
+              <span className="text-lg font-semibold">White-Label Ready</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg">
-              <LayoutDashboard className="w-5 h-5 text-primary-100" aria-hidden="true" />
-              <span className="text-sm font-semibold">Real-Time Analytics</span>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg">
+              <LayoutDashboard className="w-6 h-6 text-white" aria-hidden="true" />
+              <span className="text-lg font-semibold">Real-Time Analytics</span>
             </div>
           </div>
 
-          <div className="flex gap-4 justify-center">
+          <div className="flex gap-6 justify-center">
             <Link
               to="/embed"
-              className="px-8 py-4 bg-white text-lg-heritage font-semibold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-lg"
+              className="px-10 py-5 bg-white text-lg-heritage font-bold rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-xl"
             >
               View Live Demo →
             </Link>
             <Link
               to="/analytics"
-              className="px-8 py-4 bg-lg-active text-white font-semibold rounded-lg hover:bg-opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-lg"
+              className="px-10 py-5 bg-lg-active text-white font-bold rounded-lg hover:bg-opacity-90 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-lg-heritage text-xl"
             >
               See Analytics →
             </Link>
@@ -120,20 +120,20 @@ const HomePage = () => {
       </div>
 
       {/* Key Features */}
-      <div className="bg-lg-warm-grey py-16">
+      <div className="bg-lg-warm-grey py-20">
         <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12 font-headline">
+          <h2 className="text-5xl font-bold text-gray-900 text-center mb-16 font-headline">
             Platform Capabilities
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Search className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="bg-white rounded-xl p-8 shadow-md">
+              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                <Search className="w-8 h-8 text-lg-heritage" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-headline">
                 Smart Rebate Discovery
               </h3>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-3 text-gray-600 text-lg">
                 <li>• ZIP code-based search</li>
                 <li>• Product category filtering</li>
                 <li>• Federal, state, and utility rebates</li>
@@ -141,14 +141,14 @@ const HomePage = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <LayoutDashboard className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
+            <div className="bg-white rounded-xl p-8 shadow-md">
+              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                <LayoutDashboard className="w-8 h-8 text-lg-heritage" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-headline">
                 Advanced Analytics
               </h3>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-3 text-gray-600 text-lg">
                 <li>• Real-time dashboards</li>
                 <li>• Conversion funnel tracking</li>
                 <li>• Geographic heatmaps</li>
@@ -156,14 +156,14 @@ const HomePage = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="bg-primary-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                <Code className="w-6 h-6 text-lg-heritage" aria-hidden="true" />
+            <div className="bg-white rounded-xl p-8 shadow-md">
+              <div className="bg-primary-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                <Code className="w-8 h-8 text-lg-heritage" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 font-headline">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-headline">
                 Enterprise Integration
               </h3>
-              <ul className="space-y-2 text-gray-600">
+              <ul className="space-y-3 text-gray-600 text-lg">
                 <li>• White-label embeddable widget</li>
                 <li>• Akeneo PIM integration via Apigee</li>
                 <li>• CMS compatibility (all major platforms)</li>
@@ -175,14 +175,22 @@ const HomePage = () => {
       </div>
 
       {/* Demo Section */}
-      <div className="py-16">
+      <div className="py-20">
+        <div className="max-w-7xl mx-auto px-8 mb-12">
+          <h2 className="text-5xl font-bold text-gray-900 text-center mb-6 font-headline">
+            Interactive Demo
+          </h2>
+          <p className="text-center text-gray-600 text-xl max-w-3xl mx-auto">
+            Try our rebate locator below. Enter a ZIP code to see available rebates and incentives for your area.
+          </p>
+        </div>
         <RebateLocator />
       </div>
 
       {/* Technical Specifications */}
-      <div className="bg-gray-900 text-white py-16">
+      <div className="bg-gray-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-8">
-          <h2 className="text-3xl font-bold mb-8 text-center font-headline">
+          <h2 className="text-5xl font-bold mb-12 text-center font-headline">
             Technical Specifications
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
