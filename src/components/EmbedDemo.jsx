@@ -161,7 +161,17 @@ const EmbedDemo = () => {
           <div className="mb-6">
             <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<script>
+              <code>{`<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
   RebateLocator.init({
     container: '#rebate-widget',
     mode: 'product',
@@ -213,7 +223,17 @@ const EmbedDemo = () => {
           <div className="mb-6">
             <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<script>
+              <code>{`<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
   RebateLocator.init({
     container: '#rebate-widget',
     mode: 'category',
@@ -270,7 +290,17 @@ const EmbedDemo = () => {
           <div className="mb-6">
             <h4 className="text-sm font-semibold text-gray-700 mb-2">Integration Code:</h4>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{`<script>
+              <code>{`<!-- Load widget styles -->
+<link rel="stylesheet" href="${widgetCssUrl}">
+
+<!-- Widget container -->
+<div id="rebate-widget"></div>
+
+<!-- Load widget script -->
+<script src="${widgetUrl}"></script>
+
+<!-- Initialize widget -->
+<script>
   RebateLocator.init({
     container: '#rebate-widget',
     mode: 'standalone',
